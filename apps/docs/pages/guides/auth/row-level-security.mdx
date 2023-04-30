@@ -217,7 +217,7 @@ In the following example, rows of `stories` table are available only if they hav
 ```sql
 -- 1. Create table
 create table if not exists stories (
-  id uuid not null primary key DEFAULT uuid_generate_v4(),
+  id uuid not null primary key DEFAULT gen_random_uuid(),
   created_at timestamp with time zone default timezone('utc' :: text, now()) not null,
   content text not null
 );
